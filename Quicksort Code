@@ -1,0 +1,25 @@
+import numpy as np
+import random
+
+def quicksort(A):
+    if len(A) < 2:
+        return A
+    else:
+        pivot = A[0]
+        
+        smaller = [i for i in A[1:] if i <= pivot]
+        greater = [i for i in A[1:] if i > pivot]
+        
+        return quicksort(smaller) + [pivot] + quicksort(greater) 
+        
+        
+        
+        print (quicksort([10, 80, 3, 19, 14, 7, 5, 12]))
+        
+        random_100 = random.sample(range(900,1001),100)
+        print("Before Sorting: \n", random_100)
+        print("\nAfter Sorting: \n", quicksort(random_100))
+        
+        random_1000 = random.sample(range(-1000,1),1000)
+        print("Before Sorting: \n", random_1000)
+        print("\nAfter Sorting: \n", quicksort(random_1000))
